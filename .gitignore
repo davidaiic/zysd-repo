@@ -49,3 +49,5 @@ vendor/
 
 # --- 鍏朵粬 ---
 .vscode/
+
+ios/yaodian/Config/Config.xcconfig
