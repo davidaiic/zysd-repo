@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.manle.phone.android.yaodian.activity.SettingActivity.ProxyClick" />
+
+        <variable
+            name="islogin"
+            type="Boolean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/include_toolbar" />
+
+        <com.app.base.view.ListTile
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{()->click.click1()}"
+            android:paddingHorizontal="@dimen/dp_20"
+            app:lt_prefix_image="@drawable/ic_yhxy"
+            app:lt_prefix_image_height="@dimen/dp_16"
+            app:lt_prefix_image_width="@dimen/dp_16"
+            app:lt_prefix_text="用户协议"
+            app:lt_suffix_image="@drawable/ic_right"
+            app:lt_suffix_image_height="@dimen/dp_14"
+            app:lt_suffix_image_width="@dimen/dp_14" />
+
+        <com.app.base.view.ListTile
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{()->click.click2()}"
+            android:paddingHorizontal="@dimen/dp_20"
+            app:lt_prefix_image="@drawable/ic_yszc"
+            app:lt_prefix_image_height="@dimen/dp_16"
+            app:lt_prefix_image_width="@dimen/dp_16"
+            app:lt_prefix_text="隐私协议"
+            app:lt_suffix_image="@drawable/ic_right"
+            app:lt_suffix_image_height="@dimen/dp_14"
+            app:lt_suffix_image_width="@dimen/dp_14" />
+
+        <com.app.base.view.ListTile
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{()->click.click3()}"
+            android:paddingHorizontal="@dimen/dp_20"
+            app:lt_prefix_image="@drawable/ic_gyzsyd"
+            app:lt_prefix_image_height="@dimen/dp_16"
+            app:lt_prefix_image_width="@dimen/dp_16"
+            app:lt_prefix_text="关于掌上药店"
+            app:lt_suffix_image="@drawable/ic_right"
+            app:lt_suffix_image_height="@dimen/dp_14"
+            app:lt_suffix_image_width="@dimen/dp_14" />
+
+        <com.app.base.view.ListTile
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{()->click.click4()}"
+            android:paddingHorizontal="@dimen/dp_20"
+            app:lt_prefix_image="@drawable/ic_dsfxx"
+            app:lt_prefix_image_height="@dimen/dp_16"
+            app:lt_prefix_image_width="@dimen/dp_16"
+            app:lt_prefix_text="第三方信息共享清单"
+            app:lt_suffix_image="@drawable/ic_right"
+            app:lt_suffix_image_height="@dimen/dp_14"
+            app:lt_suffix_image_width="@dimen/dp_14" />
+
+        <com.app.base.view.ListTile
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{()->click.click5()}"
+            android:paddingHorizontal="@dimen/dp_20"
+            app:lt_prefix_image="@drawable/ic_grxx"
+            app:lt_prefix_image_height="@dimen/dp_16"
+            app:lt_prefix_image_width="@dimen/dp_16"
+            app:lt_prefix_text="个人信息收集清单"
+            app:lt_suffix_image="@drawable/ic_right"
+            app:lt_suffix_image_height="@dimen/dp_14"
+            app:lt_suffix_image_width="@dimen/dp_14" />
+
+        <com.app.base.view.ListTile
+            visible="@{islogin}"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:onClick="@{()->click.click6()}"
+            android:paddingHorizontal="@dimen/dp_20"
+            app:lt_prefix_image="@drawable/ic_zxzh"
+            app:lt_prefix_image_height="@dimen/dp_16"
+            app:lt_prefix_image_width="@dimen/dp_16"
+            app:lt_prefix_text="注销账户"
+            app:lt_suffix_image="@drawable/ic_right"
+            app:lt_suffix_image_height="@dimen/dp_14"
+            app:lt_suffix_image_width="@dimen/dp_14" />
+
+        <FrameLayout
+            android:id="@+id/loginFl"
+            visible="@{islogin}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.noober.background.view.BLTextView
+                android:layout_width="@dimen/dp_280"
+                android:layout_height="@dimen/dp_44"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:gravity="center"
+                android:onClick="@{()->click.loginOut()}"
+                android:text="退出登录"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_16"
+                app:bl_corners_radius="@dimen/dp_30"
+                app:bl_solid_color="@color/color_0FC8AC" />
+        </FrameLayout>
+    </LinearLayout>
+</layout>

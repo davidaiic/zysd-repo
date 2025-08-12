@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.drake.brv.PageRefreshLayout
+        android:id="@+id/prl"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:stateEnabled="false"
+        app:srlEnableRefresh="false">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchKeyRv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+    </com.drake.brv.PageRefreshLayout>
+
+
+</layout>

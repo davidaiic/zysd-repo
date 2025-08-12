@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ActivityAnim" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/ui_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/ui_left_out</item>
+        <item name="android:activityCloseExitAnimation">@anim/ui_right_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/ui_left_in</item>
+    </style>
+    <style name="loginDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">false</item>
+    </style>
+    <style name="SearchStyle">
+        <item name="android:textColor">@color/color_0FC8AC</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+</resources>

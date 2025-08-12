@@ -1,0 +1,124 @@
+@charset "UTF-8";
+.status_bar {
+  height: var(--status-bar-height);
+  width: 100%;
+}
+
+.line1 {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+.line2 {
+	word-break: break-all;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	/* height: 84rpx; */
+}
+.uni-p-b-98{
+	height: 100rpx;
+	/* 兼容 IOS<11.2 */
+	height: calc(100rpx+ constant(safe-area-inset-bottom));
+	/* 兼容 IOS>11.2 */
+	height: calc(100rpx + env(safe-area-inset-bottom));
+}
+
+.img-box image{
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.flex-one{
+  flex: 1;
+}
+.flex-row{
+  display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	-webkit-box-lines: multiple;
+	-moz-box-lines: multiple;
+	-o-box-lines: multiple;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+  flex-direction: row;
+}
+.flex-column{
+  display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	-webkit-box-lines: multiple;
+	-moz-box-lines: multiple;
+	-o-box-lines: multiple;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+  flex-direction: column;
+}
+.flex-c{
+justify-content: center;
+align-items: center;
+}
+.flex-je-ac{
+justify-content: flex-end;
+align-items: center;
+}
+.flex-ae{
+align-items: flex-end;
+}
+.flex-ac{
+align-items: center;
+}
+.flex-jc{
+justify-content: center;
+}
+.flex-je{
+justify-content: flex-end;
+}
+.flex-jb{
+justify-content: space-between;
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+.bg-grey{
+	background: #f8f8f8;
+}
+.talk_bottom_item_img{
+	width: 32rpx;
+	height:32rpx
+}
+.avatar-img{
+	width: 70rpx;
+	height:70rpx;
+	border-radius: 50%;
+}
+.wechat-btn{
+	background: #fff;
+	padding: 0;
+	margin: 0;
+}
+.wechat-btn::after{
+	border:none;
+}
+.u-nav-slot {
+	width: 180rpx;
+	height: 50rpx;
+	font-size: 36rpx;
+	font-family: PingFangSC-Medium, PingFang SC;
+	font-weight: 500;
+	color: #ffffff;
+	line-height: 50rpx;
+}

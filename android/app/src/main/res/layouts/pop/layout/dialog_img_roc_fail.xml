@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <com.noober.background.view.BLLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:bl_solid_color="@color/white"
+        app:bl_corners_radius="8dp"
+        android:paddingHorizontal="@dimen/dp_20"
+        android:paddingVertical="@dimen/dp_10"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/readyTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="未识别到有效条形码"
+            android:textSize="@dimen/dp_14"
+            android:textColor="@color/color_333333"
+            android:layout_gravity="center_horizontal"/>
+        <com.noober.background.view.BLTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_10"
+            app:bl_solid_color="@color/color_0FC8AC"
+            android:textSize="@dimen/dp_14"
+            app:bl_corners_radius="@dimen/dp_20"
+            android:paddingHorizontal="@dimen/dp_20"
+            android:paddingVertical="@dimen/dp_5"
+            android:text="重新识别"/>
+
+    </com.noober.background.view.BLLinearLayout>
+</layout>

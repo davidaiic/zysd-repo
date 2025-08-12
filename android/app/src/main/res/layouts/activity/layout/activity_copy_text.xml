@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.manle.phone.android.yaodian.activity.CopyTextActivity.ProxyClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/include_toolbar" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dp_15"
+            android:paddingVertical="@dimen/dp_20"
+            android:text="提示：滑动选择搜索词"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/dp_14" />
+
+        <com.manle.phone.android.yaodian.view.SlidingCheckLayout
+            android:id="@+id/scl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0"
+            android:layout_weight="1">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginHorizontal="@dimen/dp_15"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                android:scrollbars="none" />
+        </com.manle.phone.android.yaodian.view.SlidingCheckLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dp_46"
+            android:paddingBottom="@dimen/dp_50">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_select_all"
+                android:drawablePadding="@dimen/dp_4"
+                android:padding="@dimen/dp_20"
+                android:text="全选"
+                android:textColor="@color/color_0FC8AC"
+                android:textSize="@dimen/dp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_select_all"
+                android:drawablePadding="@dimen/dp_4"
+                android:padding="@dimen/dp_20"
+                android:text="全选"
+                android:textColor="@color/color_0FC8AC"
+                android:textSize="@dimen/dp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/selectAllTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_select_all"
+                android:drawablePadding="@dimen/dp_4"
+                android:padding="@dimen/dp_20"
+                android:text="全选"
+                android:onClick="@{()->click.selectAll()}"
+                android:textColor="@color/color_0FC8AC"
+                android:textSize="@dimen/dp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/copyTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_copy"
+                android:drawablePadding="@dimen/dp_4"
+                android:padding="@dimen/dp_20"
+                android:text="复制"
+                android:onClick="@{()->click.copy()}"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/dp_14"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/searchTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableTop="@drawable/ic_copy_search"
+                android:drawablePadding="@dimen/dp_4"
+                android:padding="@dimen/dp_20"
+                android:text="搜索"
+                android:onClick="@{()->click.search()}"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/dp_14"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</layout>

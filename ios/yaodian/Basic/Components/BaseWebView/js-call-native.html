@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cmn-Hans">
+    <meta charset="UTF-8">
+    <title>DSBridge Test</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=0.5,user-scalable=no"/>
+    <!--require dsbridge init js-->
+    <!--    <script src="https://unpkg.com/dsbridge/dist/dsbridge.js"></script>-->
+    <script>
+        var bridge={default:this,call:function(b,a,c){var e="";"function"==typeof a&&(c=a,a={});a={data:void 0===a?null:a};if("function"==typeof c){var g="dscb"+window.dscb++;window[g]=c;a._dscbstub=g}a=JSON.stringify(a);if(window._dsbridge)e=_dsbridge.call(b,a);else if(window._dswk||-1!=navigator.userAgent.indexOf("_dsbridge"))e=prompt("_dsbridge="+b,a);return JSON.parse(e||"{}").data},register:function(b,a,c){c=c?window._dsaf:window._dsf;window._dsInit||(window._dsInit=!0,setTimeout(function(){bridge.call("_dsb.dsinit")},
+        0));"object"==typeof a?c._obs[b]=a:c[b]=a},registerAsyn:function(b,a){this.register(b,a,!0)},hasNativeMethod:function(b,a){return this.call("_dsb.hasNativeMethod",{name:b,type:a||"all"})},disableJavascriptDialogBlock:function(b){this.call("_dsb.disableJavascriptDialogBlock",{disable:!1!==b})}};
+    !function(){if(!window._dsf){var b={_dsf:{_obs:{}},_dsaf:{_obs:{}},dscb:0,dsBridge:bridge,close:function(){bridge.call("_dsb.closePage")},_handleMessageFromNative:function(a){var e=JSON.parse(a.data),b={id:a.callbackId,complete:!0},c=this._dsf[a.method],d=this._dsaf[a.method],h=function(a,c){b.data=a.apply(c,e);bridge.call("_dsb.returnValue",b)},k=function(a,c){e.push(function(a,c){b.data=a;b.complete=!1!==c;bridge.call("_dsb.returnValue",b)});a.apply(c,e)};if(c)h(c,this._dsf);else if(d)k(d,this._dsaf);
+      else if(c=a.method.split("."),!(2>c.length)){a=c.pop();var c=c.join("."),d=this._dsf._obs,d=d[c]||{},f=d[a];f&&"function"==typeof f?h(f,d):(d=this._dsaf._obs,d=d[c]||{},(f=d[a])&&"function"==typeof f&&k(f,d))}}},a;for(a in b)window[a]=b[a];bridge.register("_hasJavascriptMethod",function(a,b){b=a.split(".");if(2>b.length)return!(!_dsf[b]&&!_dsaf[b]);a=b.pop();b=b.join(".");return(b=_dsf._obs[b]||_dsaf._obs[b])&&!!b[a]})}}();
+
+
+    </script>
+</head>
+<style>
+        .btn {
+            text-align: center;
+            background: #f00;
+            color: #000;
+            padding: 20px;
+            margin: 30px;
+            font-size: 24px;
+            border-radius: 4px;
+            box-shadow: 4px 2px 10px #999;
+        }
+
+    .btn:active {
+        opacity: .7;
+        box-shadow: 4px 2px 10px #555;
+    }
+
+    .top {
+        margin: 100px;
+    }
+
+
+</style>
+<div class="top"/>
+
+<div class="btn" onclick="scan()">扫码</div>
+<div class="btn" onclick="goLogin()">跳转登录</div>
+<div class="btn" onclick="getUserInfo()">getUserInfo</div>
+<div class="btn" onclick="saveImage()">saveImage</div>
+<div class="btn" onclick="share()">share</div>
+<div class="btn" onclick="backPage()">close</div>
+<div class="btn" onclick="browserImage()">browserImage</div>
+
+<image src="https://img1.baidu.com/it/u=1960110688,1786190632&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=281"></image>
+
+
+<script>
+
+        <!-- 扫码 -->
+        function scan() {
+            var event = {
+                action: "scan",
+            }
+            dsBridge.call("asynCallNative", event, function (v) {
+                alert(JSON.stringify(v))
+            });
+            
+        }
+
+        <!-- close -->
+        function backPage() {
+            var event = {
+                action: "back",
+            }
+            dsBridge.call("synCallNative", event)
+           
+        }
+    
+        <!-- 相册 -->
+        function goLogin() {
+            var event = {
+                action: "photo",
+                value: {"max": "3"}
+            }
+             dsBridge.call("asynCallNative", event, function (v) {
+                 
+                alert(JSON.stringify(v))
+            });
+        }
+
+    
+    <!-- 同步获取用户信息  -->
+    function getUserInfo() {
+        var event = {
+            action: "getUserInfo",
+            value: {}
+        }
+        var res = dsBridge.call("synCallNative", event)
+        alert(JSON.stringify(res));
+    }
+    
+    function share() {
+        var event = {
+            action: "share",
+            value: {"type": "1", "path": "", "imageURL": "i", "title": "分享标题"}
+        }
+        dsBridge.call("asynCallNative", event, function (v) {
+            alert(JSON.stringify(v))
+        });
+    }
+    
+    <!-- saveImage -->· 
+    function saveImage() {
+        var event = {
+            action: "saveImage",
+            value: {"image": ""}
+        }
+         dsBridge.call("asynCallNative", event, function (v) {
+            alert(JSON.stringify(v))
+        });
+    }
+    
+    <!-- browserImage -->
+    function browserImage() {
+        var event = {
+            action: "browserImage",
+            value: {"imageURLs": ["https://img1.baidu.com/it/u=413643897,2296924942&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500", "https://lmg.jj20.com/up/allimg/1114/050R1105319/21050Q05319-1-1200.jpg"],
+                "index": "0"}
+        }
+        dsBridge.call("synCallNative", event)
+    }
+    
+</script>
+</body>
+</html>

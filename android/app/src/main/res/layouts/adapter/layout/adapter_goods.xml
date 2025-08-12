@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.manle.phone.android.yaodian.bean.GoodsBean" />
+
+        <import type="android.text.TextUtils" />
+    </data>
+
+
+    <com.noober.background.view.BLConstraintLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/dp_13"
+        app:bl_corners_radius="4dp"
+        app:bl_solid_color="@color/white"
+        app:bl_stroke_color="#E0E0E0"
+        app:bl_stroke_width="1dp">
+
+        <com.makeramen.roundedimageview.RoundedImageView
+            android:id="@+id/goodsIv"
+            imageUrl="@{model.goodsImage}"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            android:layout_marginHorizontal="@dimen/dp_1"
+            android:layout_marginTop="@dimen/dp_1"
+            app:layout_constraintDimensionRatio="165:124"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:riv_corner_radius_top_left="@dimen/dp_4"
+            app:riv_corner_radius_top_right="@dimen/dp_4"
+            tools:src="@drawable/ic_error_img" />
+
+        <TextView
+            tagColor="@{model.drugPropertiesColor}"
+            visible="@{!TextUtils.isEmpty(model.drugProperties)}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dp_6"
+            android:paddingVertical="@dimen/dp_1"
+            android:text="@{model.drugProperties}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_12"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            visible="@{model.risk==1}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/ic_zhuyi"
+            android:gravity="center_horizontal"
+            android:text="风险预警"
+            android:textColor="@color/color_FD8966"
+            android:textSize="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="@+id/goodsIv"
+            app:layout_constraintLeft_toLeftOf="@+id/goodsIv"
+            app:layout_constraintRight_toRightOf="@+id/goodsIv"
+            app:layout_constraintTop_toTopOf="@+id/goodsIv" />
+
+        <TextView
+            android:id="@+id/goodNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:text="@{model.goodsName}"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dp_14"
+            android:maxLines="1"
+            android:ellipsize="end"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goodsIv"
+            tools:text="劳拉替尼" />
+
+        <TextView
+            android:id="@+id/companyNameTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="@{model.companyName}"
+            android:textColor="@color/color_999999"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/goodNameTv"
+            tools:text="老挝元素" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tagRv"
+            goodsBean="@{model}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_2"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/dp_10"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/companyNameTv"
+            tools:itemCount="4" />
+
+        <TextView
+            android:id="@+id/userCountTv"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_4"
+            android:text="@{model.searchNumText}"
+            android:textColor="@color/color_0FC8AC"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tagRv"
+            tools:text="60人查询过" />
+    </com.noober.background.view.BLConstraintLayout>
+
+</layout>

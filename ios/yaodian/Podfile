@@ -1,0 +1,44 @@
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+inhibit_all_warnings!
+
+platform :ios, '13.0'
+
+target 'Basic' do
+
+  use_frameworks!
+
+  pod 'Bind', :path => './Bind'
+
+  pod 'Kingfisher', '7.6.2'
+  pod 'dsBridge', '3.0.6'
+  pod 'MJRefresh', '3.7.5'
+  pod 'WechatOpenSDK', '1.9.9'
+  pod 'CryptoSwift', '1.6.0'
+  pod 'Alamofire', '5.6.4'
+  pod 'ZLPhotoBrowser', '4.3.8'
+  pod 'EachNavigationBar', '1.17.0'
+  pod 'Lantern', '1.1.4'
+  
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f <= 11.0
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+        end
+      end
+    end
+    
+    # Pod工程中的Bundle target签名报错
+    installer.generated_projects.each do |project|
+      project.targets.each do |target|
+          target.build_configurations.each do |config|
+              config.build_settings['CODE_SIGN_IDENTITY'] = ''
+           end
+      end
+    end
+      
+  end
+   
+end

@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.manle.phone.android.yaodian",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 202306150,
+      "versionName": "6.3.8",
+      "outputFile": "MedicineStore-v6.3.8-20230615231036.apk"
+    }
+  ],
+  "elementType": "File"
+}

@@ -1,0 +1,65 @@
+PODS:
+  - Alamofire (5.6.4)
+  - Bind (0.1.0):
+    - KakaJSON (= 1.1.2)
+    - SnapKit (= 4.2.0)
+  - CryptoSwift (1.6.0)
+  - dsBridge (3.0.6)
+  - EachNavigationBar (1.17.0)
+  - KakaJSON (1.1.2)
+  - Kingfisher (7.6.2)
+  - Lantern (1.1.4)
+  - MJRefresh (3.7.5)
+  - SnapKit (4.2.0)
+  - WechatOpenSDK (1.9.9)
+  - ZLPhotoBrowser (4.3.8):
+    - ZLPhotoBrowser/Core (= 4.3.8)
+  - ZLPhotoBrowser/Core (4.3.8)
+
+DEPENDENCIES:
+  - Alamofire (= 5.6.4)
+  - Bind (from `./Bind`)
+  - CryptoSwift (= 1.6.0)
+  - dsBridge (= 3.0.6)
+  - EachNavigationBar (= 1.17.0)
+  - Kingfisher (= 7.6.2)
+  - Lantern (= 1.1.4)
+  - MJRefresh (= 3.7.5)
+  - WechatOpenSDK (= 1.9.9)
+  - ZLPhotoBrowser (= 4.3.8)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - CryptoSwift
+    - dsBridge
+    - EachNavigationBar
+    - KakaJSON
+    - Kingfisher
+    - Lantern
+    - MJRefresh
+    - SnapKit
+    - WechatOpenSDK
+    - ZLPhotoBrowser
+
+EXTERNAL SOURCES:
+  Bind:
+    :path: "./Bind"
+
+SPEC CHECKSUMS:
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Bind: 1205aed826d1d2046a3bde9b88076391829d21fd
+  CryptoSwift: 562f8eceb40e80796fffc668b0cad9313284cfa6
+  dsBridge: 48b62ee8a411ad601a88d6f6c8cf6cb634b206b7
+  EachNavigationBar: 87430187ca1f898e6d9d8bb95c35e49749e5a0a2
+  KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  Lantern: 26ed71b2d9ace5073ecf53521e316ed8b95acdb0
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+  WechatOpenSDK: 9bf85605d50000b35e5ea679a76582426a30c595
+  ZLPhotoBrowser: a36e618898b781c225672115938ed861a11b2121
+
+PODFILE CHECKSUM: 150da3700f3f7928cf9f999c4f8af24e1fc2bd0f
+
+COCOAPODS: 1.11.3

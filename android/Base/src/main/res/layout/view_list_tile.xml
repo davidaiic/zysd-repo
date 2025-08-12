@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/topV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/color_E5E6EB"
+        android:visibility="gone" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_prefix"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp" />
+        <LinearLayout
+            android:id="@+id/ll_prefix"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="16dp"
+            android:orientation="vertical"
+            android:layout_toStartOf="@+id/ll_suffix"
+            android:layout_toEndOf="@+id/iv_prefix">
+            <TextView
+                android:id="@+id/tv_prefix"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_292934"
+                android:textSize="16sp"
+                tools:text="设备日志" />
+            <TextView
+                android:id="@+id/tv_prefix_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:textColor="@color/color_90929E"
+                android:textSize="@dimen/dp_10"
+                android:visibility="visible"
+                tools:text="设备日志" />
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:id="@+id/ll_suffix"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_suffix"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="14sp"
+                    android:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/btn_slip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    tools:visibility="visible"
+                    android:background="@drawable/selector_switch"
+                    android:visibility="gone" />
+
+                <com.noober.background.view.BLView
+                    android:id="@+id/iv_red"
+                    android:layout_width="8dp"
+                    android:layout_height="8dp"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:visibility="gone"
+                    app:bl_corners_radius="8dp"
+                    app:bl_solid_color="#EE0A24"
+                    tools:visibility="gone"
+
+                    />
+            </FrameLayout>
+
+
+            <ImageView
+                android:id="@+id/iv_suffix"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/bottomV"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1"
+        android:background="@color/color_E5E6EB"
+        android:visibility="gone" />
+</LinearLayout>

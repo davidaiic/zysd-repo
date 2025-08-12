@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="GifView">
+        <attr name="gif" format="reference" />
+        <attr name="paused" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="ShapeTextView">
+        <attr name="stv_drawableWidth" format="dimension" />
+        <attr name="stv_drawableHeight" format="dimension" />
+        <attr name="stv_drawableSize" format="dimension" />
+
+        <attr name="stv_solid" format="color" />
+        <attr name="stv_corner" format="dimension" />
+        <attr name="stv_topLeftCorner" format="dimension" />
+        <attr name="stv_topRightCorner" format="dimension" />
+        <attr name="stv_bottomLeftCorner" format="dimension" />
+        <attr name="stv_bottomRightCorner" format="dimension" />
+
+        <attr name="stv_stroke" format="color" />
+        <attr name="stv_strokeWidth" format="dimension" />
+
+        <attr name="stv_enableRipple" format="boolean" />
+        <attr name="stv_rippleColor" format="color" />
+
+        <attr name="stv_topLineColor" format="color" />
+        <attr name="stv_bottomLineColor" format="color" />
+        <attr name="stv_lineSize" format="dimension" />
+
+        <attr name="stv_gradientStartColor" format="color" />
+        <attr name="stv_gradientEndColor" format="color" />
+        <attr name="stv_gradientOrientation">
+            <enum name="TOP_BOTTOM" value="0" />
+            <enum name="TR_BL" value="1" />
+            <enum name="RIGHT_LEFT" value="2" />
+            <enum name="BR_TL" value="3" />
+            <enum name="BOTTOM_TOP" value="4" />
+            <enum name="BL_TR" value="5" />
+            <enum name="LEFT_RIGHT" value="6" />
+            <enum name="TL_BR" value="7" />
+        </attr>
+    </declare-styleable>
+    <declare-styleable name="FigureIndicatorView">
+        <attr name="fiv_corner" format="dimension" />
+        <attr name="fiv_text_color" format="color" />
+        <attr name="fiv_bg_color" format="color" />
+        <attr name="fiv_text_size" format="dimension" />
+
+    </declare-styleable>
+
+    <declare-styleable name="SwipeLayout">
+        <attr name="swipeEnable" format="boolean" />
+        <attr name="ios" format="boolean" />
+        <attr name="leftSwipe" format="boolean" />
+    </declare-styleable>
+
+
+    <attr name="qmui_backgroundColor" format="color" />
+    <attr name="qmui_borderColor" format="color" />
+    <attr name="qmui_borderWidth" format="dimension" />
+    <attr name="qmui_linkColor" format="color" />
+    <attr name="qmui_orientation" format="enum">
+        <enum name="horizontal" value="0" />
+        <enum name="vertical" value="1" />
+    </attr>
+
+
+
+    <declare-styleable name="LinkTextView">
+        <attr name="qmui_linkBackgroundColor" format="color" />
+        <attr name="qmui_linkTextColor" format="color" />
+    </declare-styleable>
+
+    <!-- RoundWidget start -->
+
+
+
+    <declare-styleable name="MaskView">
+        <attr name="mask_highlightAreaType" format="enum">
+            <enum name="TRANSPARENT_CUBE" value="0" />
+            <enum name="BITMAP" value="1" />
+        </attr>
+        <!--高亮区域的RectF-->
+        <attr name="mask_highlightAreaLeft" format="dimension" />
+        <attr name="mask_highlightAreaTop" format="dimension" />
+        <attr name="mask_highlightAreaRight" format="dimension" />
+        <attr name="mask_highlightAreaBottom" format="dimension" />
+        <!--高亮区域Radius-->
+        <attr name="mask_highlightAreaRadius" format="dimension" />
+        <!--如需在高亮区域绘制bitmap，当highlightAreaType==HighlightAreaType.BITMAP时生效-->
+        <attr name="mask_highlightBitmap" format="reference" />
+        <!--背景虚化alpha值，0-1-->
+        <attr name="mask_Alpha" format="float" />
+    </declare-styleable>
+
+    <declare-styleable name="AndRatingBar">
+        <!-- color of star -->
+        <attr name="starColor" format="color|reference" />
+        <!-- color of secondary star -->
+        <attr name="subStarColor" format="color|reference" />
+        <!-- color of background star -->
+        <attr name="bgColor" format="color|reference" />
+        <!-- drawable of star -->
+        <attr name="starDrawable" format="reference" />
+        <!-- drawable of background star -->
+        <attr name="bgDrawable" format="reference" />
+        <!-- 保持星星的原始颜色绘制-->
+        <attr name="keepOriginColor" format="boolean" />
+        <!-- 改变间距的比例因子-->
+        <attr name="scaleFactor" format="float" />
+        <!--间距-->
+        <attr name="starSpacing" format="dimension" />
+        <!-- right to left -->
+        <attr name="right2Left" format="boolean" />
+    </declare-styleable>
+    <declare-styleable name="AlignmentTextView">
+        <attr name="align" format="enum">
+            <enum name="left" value="0" />
+            <enum name="center" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+    <!-- 加粗字体 -->
+    <declare-styleable name="BoldTextView">
+        <attr name="stroke_width" format="float"/>
+    </declare-styleable>
+    <declare-styleable name="FolderTextView">
+        <attr name="foldText" format="string"/>
+        <attr name="unFoldText" format="string"/>
+        <attr name="foldLine" format="integer"/>
+        <attr name="tailTextColor" format="color"/>
+        <attr name="canFoldAgain" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="ListTile">
+        <attr name="lt_prefix_image" format="reference" />
+        <attr name="lt_prefix_image_width" format="dimension" />
+        <attr name="lt_prefix_image_height" format="dimension" />
+        <attr name="lt_prefix_space" format="dimension" />
+        <attr name="lt_prefix_text" format="string" />
+        <attr name="lt_prefix_text_color" format="color" />
+        <attr name="lt_prefix_text_size" format="dimension" />
+
+        <attr name="lt_prefix_bottom_text" format="string" />
+        <attr name="lt_prefix_bottom_text_color" format="color" />
+        <attr name="lt_prefix_bottom_text_size" format="dimension" />
+
+
+        <attr name="lt_suffix_image" format="reference" />
+        <attr name="lt_suffix_image_width" format="dimension" />
+        <attr name="lt_suffix_image_height" format="dimension" />
+        <attr name="lt_suffix_space" format="dimension" />
+        <attr name="lt_suffix_text" format="string" />
+        <attr name="lt_suffix_text_color" format="color" />
+        <attr name="lt_suffix_text_size" format="dimension" />
+        <attr name="lt_switch_show" format="boolean"></attr>
+        <attr name="lt_switch_selected" format="boolean"></attr>
+        <attr name="lt_top_show" format="boolean"></attr>
+        <attr name="lt_bottom_show" format="boolean"></attr>
+    </declare-styleable>
+    <declare-styleable name="NineGridLayout">
+        <attr name="sapcing" format="dimension"/>
+        <attr name="ivRadius" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="SwitchButton">
+        <attr name="sb_background_color_unchecked" format="color" />
+        <attr name="sb_background_color_checked" format="color" />
+        <attr name="sb_button_start_color" format="color" />
+        <attr name="sb_button_end_color" format="color" />
+        <attr name="sb_button_center_offset_x" format="dimension" />
+        <attr name="sb_width" format="dimension" />
+        <attr name="sb_height" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="PileLayout">
+        <attr name="PileLayout_vertivalSpace" format="dimension"/>
+        <attr name="PileLayout_pileWidth" format="dimension"/>
+    </declare-styleable>
+    <declare-styleable name="RatioImageView">
+        <attr name="ratio" format="float"/>
+    </declare-styleable>
+
+    <declare-styleable name="NineGridView">
+        <attr name="ngv_spanCount" format="integer" />
+        <attr name="ngv_itemGap" format="dimension" />
+        <attr name="ngv_maxCount" format="integer" />
+
+        <attr name="ngv_single_strategy">
+            <enum name="usual" value="0" />
+            <enum name="fill" value="1" />
+            <enum name="custom" value="2" />
+        </attr>
+
+        <attr name="ngv_two_strategy">
+            <enum name="usual" value="0" />
+            <enum name="fill" value="1" />
+        </attr>
+
+        <attr name="ngv_three_strategy">
+            <enum name="usual" value="0" />
+            <enum name="fill" value="1" />
+            <enum name="bili" value="3" />
+        </attr>
+
+        <attr name="ngv_four_strategy">
+            <enum name="usual" value="0" />
+            <enum name="fill" value="1" />
+            <enum name="bili" value="3" />
+        </attr>
+
+        <attr name="ngv_extra_strategy">
+            <enum name="show" value="0" />
+            <enum name="hide" value="1" />
+        </attr>
+
+    </declare-styleable>
+    <declare-styleable name="MarqueeView">
+        <attr name="marqueeAnimDuration" format="integer" />
+    </declare-styleable>
+
+    <declare-styleable name="SimpleMarqueeView">
+        <attr name="smvTextColor" format="reference|color" />
+        <attr name="smvTextSize" format="dimension" />
+        <!--https://github.com/android/platform_frameworks_base/blob/master/core/res/res/values/attrs.xml-->
+        <attr name="smvTextGravity">
+            <!-- Push object to the top of its container, not changing its size. -->
+            <flag name="top" value="0x30" />
+            <!-- Push object to the bottom of its container, not changing its size. -->
+            <flag name="bottom" value="0x50" />
+            <!-- Push object to the left of its container, not changing its size. -->
+            <flag name="left" value="0x03" />
+            <!-- Push object to the right of its container, not changing its size. -->
+            <flag name="right" value="0x05" />
+            <!-- Place object in the vertical center of its container, not changing its size. -->
+            <flag name="center_vertical" value="0x10" />
+            <!-- Grow the vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill_vertical" value="0x70" />
+            <!-- Place object in the horizontal center of its container, not changing its size. -->
+            <flag name="center_horizontal" value="0x01" />
+            <!-- Grow the horizontal size of the object if needed so it completely fills its container. -->
+            <flag name="fill_horizontal" value="0x07" />
+            <!-- Place the object in the center of its container in both the vertical and horizontal axis, not changing its size. -->
+            <flag name="center" value="0x11" />
+            <!-- Grow the horizontal and vertical size of the object if needed so it completely fills its container. -->
+            <flag name="fill" value="0x77" />
+            <!-- Additional option that can be set to have the top and/or bottom edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the vertical gravity: a top gravity will clip the bottom
+                 edge, a bottom gravity will clip the top edge, and neither will clip both edges. -->
+            <flag name="clip_vertical" value="0x80" />
+            <!-- Additional option that can be set to have the left and/or right edges of
+                 the child clipped to its container's bounds.
+                 The clip will be based on the horizontal gravity: a left gravity will clip the right
+                 edge, a right gravity will clip the left edge, and neither will clip both edges. -->
+            <flag name="clip_horizontal" value="0x08" />
+            <!-- Push object to the beginning of its container, not changing its size. -->
+            <flag name="start" value="0x00800003" />
+            <!-- Push object to the end of its container, not changing its size. -->
+            <flag name="end" value="0x00800005" />
+        </attr>
+        <attr name="smvTextSingleLine" format="boolean" />
+        <!-- Where to ellipsize text. -->
+        <attr name="smvTextEllipsize">
+            <enum name="none" value="0" />
+            <enum name="start" value="1" />
+            <enum name="middle" value="2" />
+            <enum name="end" value="3" />
+        </attr>
+
+    </declare-styleable>
+</resources>

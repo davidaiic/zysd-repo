@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.manle.phone.android.yaodian.activity.SearchActivity.ProxyClick" />
+
+        <variable
+            name="vm"
+            type="com.manle.phone.android.yaodian.vm.SearchViewModel" />
+
+        <import type="android.view.View" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
+            style="@style/MyToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            android:background="@color/color_0FC8AC"
+            tools:layout_height="@dimen/dp_50">
+
+            <ImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:onClick="@{()->click.back()}"
+                android:paddingLeft="@dimen/dp_16"
+                android:paddingRight="@dimen/dp_2"
+                android:src="@drawable/ic_white_back" />
+
+
+            <com.noober.background.view.BLRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginLeft="@dimen/dp_8"
+                android:layout_marginRight="@dimen/dp_15"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                app:bl_corners_radius="@dimen/dp_50"
+                app:bl_solid_color="@color/white">
+
+                <ImageView
+                    android:id="@+id/iv_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:onClick="@{()->click.toScan()}"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_scan" />
+
+                <View
+                    android:id="@+id/lineV"
+                    android:layout_width="@dimen/dp_1"
+                    android:layout_height="@dimen/dp_12"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="4dp"
+                    android:layout_toRightOf="@+id/iv_search"
+                    android:background="#330FC8AC" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/iv_search_cancel"
+                    android:layout_toRightOf="@id/lineV"
+                    android:background="@null"
+
+                    android:focusable="true"
+                    android:hint="请输入药品名称"
+                    android:imeOptions="actionSearch"
+                    android:singleLine="true"
+                    android:text="@={vm.searchText}"
+                    android:textColor="@color/color_333333"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="13dp" />
+
+                <ImageView
+                    android:id="@+id/iv_search_cancel"
+                    visible="@{vm.searchText.length()>0}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/iv_take_photo"
+                    android:onClick="@{()->click.clearSearchText()}"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_search_delete"
+                    tools:visibility="visible" />
+
+                <ImageView
+                    android:id="@+id/iv_take_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/cancelEditTv"
+                    android:onClick="@{()->click.toTakePhoto()}"
+                    android:paddingLeft="@dimen/dp_4"
+                    android:paddingRight="8dp"
+                    android:src="@drawable/ic_take_photo"
+                    tools:visibility="visible" />
+
+                <com.noober.background.view.BLTextView
+                    android:id="@+id/cancelEditTv"
+                    android:layout_width="@dimen/dp_64"
+                    android:layout_height="@dimen/dp_28"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/dp_2"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_2"
+                    android:layout_marginEnd="@dimen/dp_2"
+                    android:layout_marginBottom="@dimen/dp_2"
+                    android:gravity="center"
+                    android:onClick="@{()->click.search()}"
+                    android:text="搜索"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    app:bl_corners_radius="@dimen/dp_30"
+                    app:bl_solid_color="@color/color_0FC8AC"
+                    tools:visibility="visible" />
+            </com.noober.background.view.BLRelativeLayout>
+
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+
+    </LinearLayout>
+</layout>

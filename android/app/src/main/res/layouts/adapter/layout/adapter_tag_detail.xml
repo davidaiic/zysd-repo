@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="String" />
+    </data>
+
+        <com.noober.background.view.BLTextView
+            android:id="@+id/tagTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="@dimen/dp_4"
+            android:paddingVertical="@dimen/dp_3"
+            android:gravity="center"
+            android:text="@{model}"
+            android:textColor="@color/color_0FC8AC"
+            android:textSize="@dimen/dp_11"
+            app:bl_corners_radius="2dp"
+            app:bl_solid_color="@color/color_10_0FC8AC"
+            tools:text="医保" />
+
+</layout>

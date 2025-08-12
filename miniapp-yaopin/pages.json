@@ -1,0 +1,189 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index"
+			// "style": {
+			// 	"navigationBarTitleText": "首页",
+			// 	"enablePullDownRefresh": true,
+			// 	"app-plus":{
+			// 		// 将回弹属性关掉
+			// 		"bounce":"none"
+			// 	}
+			// }
+		}, {
+			"path": "pages/mine/mine"
+		}, {
+			"path": "pages/lscx/lscx",
+			"style": {
+				"navigationBarTitleText": "查询历史"
+			}
+		}, {
+			"path": "pages/yjfk/yjfk"
+		}, {
+			"path": "pages/lxwm/lxwm"
+		}, {
+			"path": "pages/zzcx/index"
+		}, {
+			"path": "pages/zzcx/yccx"
+		}, {
+			"path": "pages/zzcx/where"
+		}, {
+			"path": "pages/zzcx/result"
+		}, {
+			"path": "pages/rghc/index"
+		}, {
+			"path": "pages/rghc/zpcx"
+		}, {
+			"path": "pages/jgcx/index"
+		}, {
+			"path": "pages/jgcx/result"
+		}, {
+			"path": "pages/searchPage/searchPage"
+		}, {
+			"path": "pages/login/noLogin"
+		}, {
+			"path": "pages/mine/yhxy"
+		}, {
+			"path": "pages/mine/noEwm"
+		}, {
+			"path": "pages/mine/ewm"
+		}, {
+			"path": "pages/mine/userMange"
+		}, {
+			"path": "pages/mine/join"
+		}, {
+			"path": "pages/mine/findWXH"
+		}, {
+			"path": "pages/mine/findEWM"
+		}, {
+			"path": "pages/zzcx/ypcx"
+		}, {
+			"path": "pages/fatie/fatie"
+		}, {
+			"path": "pages/plgy/plgy"
+		}, {
+			"path": "pages/webView/webView"
+		}, {
+			"path": "pages/allComment/allComment"
+		},{
+            "path" : "pages/ptlxwm/ptlxwm"
+        }, {
+			"path" : "pages/camera/camera"
+		},{
+			"path" : "pages/sbjg/pzjg/pzjg"
+		},{
+			"path": "pages/mine/yszy"
+		},{
+			"path": "pages/mine/basicInfo"
+		},{
+			"path": "pages/mine/deviceInfo"
+		},{
+			"path": "pages/mine/threeInfo"
+		},
+		{
+			"path": "pages/mine/useInfo"
+		},
+		{
+			"path": "pages/wysj/wysj"
+		},
+		{
+			"path": "pages/wybj/wybj"
+		},
+		{
+			"path": "pages/result/jyjc"
+		},
+		{
+			"path": "pages/result/hzzm"
+		},
+		{
+			"path": "pages/result/csjz"
+		},
+		{
+			"path": "pages/result/smNoRisk"
+		},
+		{
+			"path": "pages/result/smRisk"
+		},
+		{
+			"path": "pages/result/sms"
+		},
+		{
+			"path": "pages/result/gnyfw"
+		},
+		{
+			"path": "pages/result/gwwfw"
+		},
+		{
+			"path": "pages/result/gwyfw"
+		},
+		{
+			"path": "pages/mine/about"
+		},
+		{
+			"path": "pages/sbjg/tqwz/tqwz"
+		},
+		// 圈子
+		{
+			"path" : "pages/circle/circle"
+		},
+		{
+			"path":"pages/circle/search"
+		},
+		{
+			"path": "pages/circle/circle-search"
+		},
+		{
+			"path": "pages/circle/detail/index"
+		},
+		{
+			"path": "pages/circle/zxDetail"
+		},
+		{
+			"path": "pages/circle/zixun_list"
+		}
+    ],
+	"tabBar": {
+		"color": "#333333",
+		"selectedColor": "#287CF9",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"fontSize": "10px",
+		"iconWidth": "24px",
+		"spacing": "3px",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/home.png",
+				"selectedIconPath": "static/home_selected.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/circle/circle",
+				"iconPath": "static/yy-circle.png",
+				"selectedIconPath": "static/yy-circle-selected@2x.png",
+				"text": "圈子"
+			},
+			{
+				"pagePath": "pages/mine/mine",
+				"iconPath": "static/mine.png",
+				"selectedIconPath": "static/mine_selected.png",
+				"text": "我的"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "识药查真伪",
+		"navigationBarBackgroundColor": "#0AD0B2",
+		"backgroundColor": "#0fc7ab",
+		"navigationStyle": "custom",
+		"disableScroll":true,
+		"app-plus": {
+			"softinputNavBar": "none", // 是否显示软键盘上的导航条
+			"titleNView": false,
+			"animationType": "fade-in",
+			"softinputMode": "adjustPan",
+			"animationDuration": 500
+		}
+	},
+	"uniIdRouter": {}
+}

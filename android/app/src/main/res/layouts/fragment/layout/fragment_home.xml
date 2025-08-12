@@ -1,0 +1,645 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.manle.phone.android.yaodian.bean.HomeBean" />
+
+        <variable
+            name="show"
+            type="Boolean" />
+
+        <variable
+            name="click"
+            type="com.manle.phone.android.yaodian.fragment.HomeFragment.ProxyClick" />
+
+        <import type="android.view.View" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/MyToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:actionBarSize"
+                android:background="@color/color_0FC8AC"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                tools:layout_height="@dimen/dp_54">
+
+                <com.noober.background.view.BLLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_marginHorizontal="@dimen/dp_15"
+                    android:orientation="horizontal"
+                    app:bl_corners_radius="@dimen/dp_20"
+                    app:bl_solid_color="@color/white">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:onClick="@{()->click.toScan()}"
+                        android:paddingLeft="@dimen/dp_13"
+                        android:paddingRight="@dimen/dp_4"
+                        android:src="@drawable/ic_scan" />
+
+                    <View
+                        android:layout_width="@dimen/dp_1"
+                        android:layout_height="@dimen/dp_12"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="4dp"
+                        android:background="#330FC8AC" />
+
+                    <com.app.base.view.marquee.SimpleMarqueeView
+                        android:id="@+id/smv"
+                        android:layout_width="@dimen/dp_0"
+                        android:layout_height="@dimen/dp_32"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:flipInterval="2000"
+                        app:marqueeAnimDuration="1000"
+                        android:inAnimation="@anim/in_bottom"
+                        android:outAnimation="@anim/out_top"
+                        android:autoStart="true"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        app:smvTextColor="@color/color_999999"
+                        app:smvTextGravity="center_vertical"
+                        app:smvTextEllipsize="end"
+                        app:smvTextSingleLine="true"
+                        app:smvTextSize="@dimen/dp_14"
+                        tools:text="173****8706 1天前查询过塞尔帕替尼  1天前查询过塞尔帕替尼" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:onClick="@{()->click.toTakePhoto()}"
+                        android:paddingHorizontal="@dimen/dp_10"
+                        android:src="@drawable/ic_take_photo" />
+
+                    <com.noober.background.view.BLTextView
+                        android:layout_width="@dimen/dp_64"
+                        android:layout_height="@dimen/dp_28"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="@dimen/dp_2"
+                        android:gravity="center"
+                        android:text="搜索"
+                        android:onClick="@{()->click.toSearchEmpty()}"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_14"
+                        app:bl_corners_radius="@dimen/dp_20"
+                        app:bl_solid_color="@color/color_0FC8AC" />
+
+
+                </com.noober.background.view.BLLinearLayout>
+            </androidx.appcompat.widget.Toolbar>
+
+            <com.drake.brv.PageRefreshLayout
+                android:id="@+id/prl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srlEnableLoadMore="false">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/dp_15"
+                            android:paddingVertical="@dimen/dp_10">
+
+                            <com.zhpan.bannerview.BannerViewPager
+                                android:id="@+id/vpBanner"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_0"
+                                app:bvp_auto_play="true"
+                                app:bvp_can_loop="true"
+                                app:bvp_indicator_gravity="end"
+                                app:bvp_indicator_visibility="visible"
+                                app:bvp_interval="5000"
+                                app:layout_constraintDimensionRatio="345:140"
+                                app:layout_constraintLeft_toLeftOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:layout_height="@dimen/dp_140" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_10"
+                            android:background="@color/color_F8F8F8" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingHorizontal="@dimen/dp_15">
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/dp_10">
+
+                                <View
+                                    android:layout_width="@dimen/dp_64"
+                                    android:layout_height="3dp"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginBottom="@dimen/dp_4"
+                                    android:background="@drawable/tab_bg" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="查询入口"
+                                    android:textColor="@color/color_333333"
+                                    android:textSize="@dimen/dp_16"
+                                    android:textStyle="bold" />
+                            </FrameLayout>
+
+                            <LinearLayout
+                                android:id="@+id/searchOneLl"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/dp_90"
+                                android:orientation="horizontal"
+                                android:visibility="@{show?View.VISIBLE:View.INVISIBLE}">
+
+                                <com.noober.background.view.BLConstraintLayout
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="@dimen/dp_8"
+                                    android:layout_weight="1"
+                                    android:onClick="@{()->click.toScanReal()}"
+                                    android:paddingVertical="@dimen/dp_20"
+                                    android:paddingLeft="@dimen/dp_15"
+                                    android:paddingRight="10dp"
+                                    app:bl_corners_radius="8dp"
+                                    app:bl_gradient_endColor="#0FC7AB"
+                                    app:bl_gradient_startColor="#0AD0B2">
+
+                                    <ImageView
+                                        android:id="@+id/czwIv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_sm_yzw"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/dp_10"
+                                        android:text="扫一扫查真伪"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp_14"
+                                        android:textStyle="bold"
+                                        app:layout_constraintLeft_toRightOf="@+id/czwIv"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/czwCountTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/dp_10"
+                                        android:text="@{model.scanNumText}"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp_18"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintLeft_toRightOf="@+id/czwIv"
+                                        tools:text="23333" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="人查询过"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp_12"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBaseline_toBaselineOf="@+id/czwCountTv"
+                                        app:layout_constraintLeft_toRightOf="@+id/czwCountTv" />
+                                </com.noober.background.view.BLConstraintLayout>
+
+                                <com.noober.background.view.BLConstraintLayout
+                                    android:layout_width="@dimen/dp_0"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginLeft="@dimen/dp_8"
+                                    android:layout_weight="1"
+                                    android:onClick="@{()->click.toRghc()}"
+                                    android:paddingVertical="@dimen/dp_20"
+                                    android:paddingLeft="@dimen/dp_15"
+                                    android:paddingRight="15dp"
+                                    app:bl_corners_radius="8dp"
+                                    app:bl_gradient_endColor="#4299EE"
+                                    app:bl_gradient_startColor="#5BAEFB">
+
+                                    <ImageView
+                                        android:id="@+id/rghcIv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_rghc"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="人工核查"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp_14"
+                                        android:textStyle="bold"
+
+                                        app:layout_constraintLeft_toLeftOf="@+id/rghcCountTv"
+                                        app:layout_constraintRight_toRightOf="@+id/rghcTv"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/rghcCountTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="@dimen/dp_10"
+                                        android:text="@{model.manualVerifyNumText}"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp_18"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintLeft_toRightOf="@+id/rghcIv"
+                                        tools:text="233" />
+
+                                    <TextView
+                                        android:id="@+id/rghcTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="人查询过"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp_12"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBaseline_toBaselineOf="@+id/rghcCountTv"
+                                        app:layout_constraintLeft_toRightOf="@+id/rghcCountTv" />
+                                </com.noober.background.view.BLConstraintLayout>
+                            </LinearLayout>
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/dp_12"
+                                android:visibility="@{show?View.VISIBLE:View.INVISIBLE}">
+
+                                <com.noober.background.view.BLConstraintLayout
+                                    android:id="@+id/jgcxCl"
+                                    android:layout_width="@dimen/dp_107"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:onClick="@{()->click.toJgcx()}"
+                                    android:paddingHorizontal="@dimen/dp_5"
+                                    android:paddingVertical="@dimen/dp_16"
+                                    app:bl_corners_radius="8dp"
+                                    app:bl_gradient_endColor="#FFB44B"
+                                    app:bl_gradient_startColor="#FF9F17"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/jgcxIv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_jgcx"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/jgcxTitleTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/dp_8"
+                                        android:text="价格查询"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp_14"
+                                        android:textStyle="bold"
+                                        app:layout_constraintLeft_toLeftOf="@+id/jgcxIv"
+                                        app:layout_constraintRight_toRightOf="@+id/jgcxIv"
+                                        app:layout_constraintTop_toBottomOf="@+id/jgcxIv" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/jgcxTitleTv">
+
+                                        <TextView
+                                            android:id="@+id/jgcxCountTv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_6"
+                                            android:includeFontPadding="false"
+                                            android:text="@{model.priceQueryNumText}"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/dp_18"
+                                            android:textStyle="bold"
+                                            tools:text="233" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="bottom"
+                                            android:paddingBottom="@dimen/dp_1"
+                                            android:text="人查询过"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/dp_12" />
+                                    </LinearLayout>
+                                </com.noober.background.view.BLConstraintLayout>
+
+                                <com.noober.background.view.BLConstraintLayout
+                                    android:id="@+id/wysjCl"
+                                    android:layout_width="@dimen/dp_107"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:onClick="@{()->click.toWysj()}"
+                                    android:paddingHorizontal="@dimen/dp_5"
+                                    android:paddingVertical="@dimen/dp_16"
+                                    app:bl_corners_radius="8dp"
+                                    app:bl_gradient_endColor="#FF698C"
+                                    app:bl_gradient_startColor="#FF7797"
+                                    app:layout_constraintLeft_toRightOf="@+id/jgcxCl"
+                                    app:layout_constraintRight_toLeftOf="@+id/wybjCl"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/wysjIv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_wysj"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/wysjTitleTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/dp_8"
+                                        android:text="我要送检"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp_14"
+                                        android:textStyle="bold"
+                                        app:layout_constraintLeft_toLeftOf="@+id/wysjIv"
+                                        app:layout_constraintRight_toRightOf="@+id/wysjIv"
+                                        app:layout_constraintTop_toBottomOf="@+id/wysjIv" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/wysjTitleTv">
+
+                                        <TextView
+                                            android:id="@+id/wysjCountTv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_6"
+                                            android:includeFontPadding="false"
+                                            android:textColor="@color/white"
+                                            android:text="@{model.checkNumText}"
+                                            android:textSize="@dimen/dp_18"
+                                            android:textStyle="bold"
+                                            tools:text="233" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="bottom"
+                                            android:paddingBottom="@dimen/dp_1"
+                                            android:text="人送检过"
+
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/dp_12" />
+                                    </LinearLayout>
+
+
+                                </com.noober.background.view.BLConstraintLayout>
+
+                                <com.noober.background.view.BLConstraintLayout
+                                    android:id="@+id/wybjCl"
+                                    android:layout_width="@dimen/dp_107"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:onClick="@{()->click.toWybj()}"
+                                    android:paddingHorizontal="@dimen/dp_5"
+                                    android:paddingVertical="@dimen/dp_16"
+                                    app:bl_corners_radius="8dp"
+                                    app:bl_gradient_endColor="#5B97B7"
+                                    app:bl_gradient_startColor="#66A4C4"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent">
+
+                                    <ImageView
+                                        android:id="@+id/wybjIv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:src="@drawable/ic_wybj"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <TextView
+                                        android:id="@+id/wybjTitleTv"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/dp_8"
+                                        android:text="我要比价"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/dp_14"
+                                        android:textStyle="bold"
+                                        app:layout_constraintLeft_toLeftOf="@+id/wybjIv"
+                                        app:layout_constraintRight_toRightOf="@+id/wybjIv"
+                                        app:layout_constraintTop_toBottomOf="@+id/wybjIv" />
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="horizontal"
+                                        app:layout_constraintLeft_toLeftOf="parent"
+                                        app:layout_constraintRight_toRightOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/wybjTitleTv">
+
+                                        <TextView
+                                            android:id="@+id/wybjCountTv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginTop="@dimen/dp_6"
+                                            android:includeFontPadding="false"
+                                            android:text="@{model.compareNumText}"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/dp_18"
+                                            android:textStyle="bold"
+                                            tools:text="233" />
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="bottom"
+                                            android:paddingBottom="1dp"
+                                            android:text="人比价过"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/dp_12" />
+                                    </LinearLayout>
+
+
+                                </com.noober.background.view.BLConstraintLayout>
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            <com.manle.phone.android.yaodian.view.SmoothScrollLayout
+                                android:id="@+id/smoothSl"
+                                android:layout_width="match_parent"
+                                android:layout_marginTop="@dimen/dp_12"
+                                android:layout_marginBottom="@dimen/dp_6"
+                                android:layout_height="50dp"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_10"
+                            android:background="@color/color_F8F8F8" />
+
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/dp_15"
+                            android:paddingVertical="@dimen/dp_10">
+
+                            <View
+                                android:layout_width="@dimen/dp_64"
+                                android:layout_height="3dp"
+                                android:layout_gravity="bottom"
+                                android:layout_marginBottom="@dimen/dp_4"
+                                android:background="@drawable/tab_bg" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="热门药品"
+                                android:textColor="@color/color_333333"
+                                android:textSize="@dimen/dp_16"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/ypRv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never"
+                            android:paddingHorizontal="@dimen/dp_15"
+                            android:scrollbars="none" />
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="@dimen/dp_15">
+
+                            <View
+                                android:layout_width="@dimen/dp_64"
+                                android:layout_height="3dp"
+                                android:layout_gravity="bottom"
+                                android:layout_marginBottom="@dimen/dp_12"
+                                android:background="@drawable/tab_bg" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingVertical="@dimen/dp_10"
+                                android:text="热门评论"
+                                android:textColor="@color/color_333333"
+                                android:textSize="@dimen/dp_16"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/moreTv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right|center_vertical"
+                                android:gravity="center"
+                                android:onClick="@{()->click.toMore()}"
+                                android:paddingHorizontal="@dimen/dp_4"
+                                android:paddingVertical="@dimen/dp_10"
+                                android:text="更多"
+                                android:textColor="@color/color_0FC8AC"
+                                android:textSize="@dimen/dp_14" />
+                        </FrameLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/plRv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:nestedScrollingEnabled="false"
+                            android:overScrollMode="never"
+                            android:scrollbars="none" />
+
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+            </com.drake.brv.PageRefreshLayout>
+
+
+        </LinearLayout>
+        <com.noober.background.view.BLLinearLayout
+
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="bottom|right"
+            android:onClick="@{()->click.publishPost()}"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_93"
+            android:background="@color/color_0FC8AC"
+            android:orientation="vertical"
+            app:bl_corners_radius="@dimen/dp_40"
+            app:bl_gradient_endColor="#0FC7AB"
+            app:bl_gradient_startColor="#0AD0B2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_7"
+                android:src="@drawable/ic_ft" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_2"
+                android:text="发帖"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_12" />
+
+        </com.noober.background.view.BLLinearLayout>
+    </FrameLayout>
+
+
+
+</layout>

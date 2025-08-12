@@ -1,0 +1,27 @@
+PODS:
+  - Bind (0.1.0):
+    - KakaJSON (= 1.1.2)
+    - SnapKit (= 4.2.0)
+  - KakaJSON (1.1.2)
+  - SnapKit (4.2.0)
+
+DEPENDENCIES:
+  - Bind (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - KakaJSON
+    - SnapKit
+
+EXTERNAL SOURCES:
+  Bind:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Bind: 1205aed826d1d2046a3bde9b88076391829d21fd
+  KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
+
+PODFILE CHECKSUM: ff63a56aa1e67d9cd5e0bf42ce06012426814494
+
+COCOAPODS: 1.11.3

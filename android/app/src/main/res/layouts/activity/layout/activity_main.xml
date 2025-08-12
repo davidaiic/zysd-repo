@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.manle.phone.android.yaodian.activity.MainActivity.ProxyClick" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_F8F8F8"
+
+        android:orientation="vertical">
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/bottomFl"
+            android:layout_weight="1" />
+
+        <com.noober.background.view.BLFrameLayout
+            android:id="@+id/bottomFl"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_54"
+            android:layout_alignParentBottom="true"
+            android:background="@color/white">
+
+            <LinearLayout
+                android:id="@+id/llBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <LinearLayout
+                    android:id="@+id/ll_home"
+                    style="@style/homeLl"
+                    android:onClick="@{()->click.toHome()}">
+
+
+                    <TextView
+                        android:id="@+id/tvHome"
+                        style="@style/homeTv"
+                        android:drawableTop="@drawable/home_home"
+                        android:text="首页" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_qz"
+                    style="@style/homeLl"
+                    android:onClick="@{()->click.toQz()}">
+
+
+                    <TextView
+                        android:id="@+id/tvQz"
+                        style="@style/homeTv"
+                        android:drawableTop="@drawable/home_qz"
+                        android:text="圈子" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_Me"
+                    style="@style/homeLl"
+                    android:onClick="@{()->click.toMe()}">
+
+
+                    <TextView
+                        android:id="@+id/tvMe"
+                        style="@style/homeTv"
+                        android:drawableTop="@drawable/home_me"
+                        android:text="我的" />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+        </com.noober.background.view.BLFrameLayout>
+
+    </RelativeLayout>
+
+</layout>

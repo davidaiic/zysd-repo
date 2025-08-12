@@ -1,0 +1,43 @@
+import org.gradle.api.initialization.resolve.RepositoriesMode
+
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url "https://maven.aliyun.com/repository/releases" }
+        maven { url 'https://maven.aliyun.com/repository/central' }
+//        maven { url "https://mvn.mob.com/android" }
+        maven { url 'https://developer.huawei.com/repo/' }
+        google()
+        mavenCentral()
+        jcenter()
+
+    }
+
+    dependencyResolutionManagement {
+        repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+        repositories {
+            maven { url 'https://jitpack.io' }
+            maven { url 'https://maven.aliyun.com/repository/google' }
+            maven { url 'https://maven.aliyun.com/repository/public' }
+            maven { url "https://maven.aliyun.com/repository/releases" }
+            maven { url 'https://maven.aliyun.com/repository/central' }
+
+//            maven { url "https://mvn.mob.com/android" }
+            maven { url 'https://developer.huawei.com/repo/' }
+
+            google()
+            mavenCentral()
+            jcenter()
+
+        }
+    }
+}
+rootProject.name = "MedicineStore"
+include ':app'
+includeBuild("version_plugin")
+include ':Base'
+include ':myZxing'
+include ':update_app'

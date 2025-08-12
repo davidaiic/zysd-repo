@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.manle.phone.android.yaodian.pop.ScanCodeCenterPopupView.ProxyClick" />
+    </data>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.noober.background.view.BLLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="24dp"
+            app:bl_corners_radius="16dp"
+            app:bl_solid_color="@color/white">
+
+            <TextView
+                android:id="@+id/tv_title"
+                style="@style/XPopupTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingHorizontal="@dimen/dp_24"
+                android:text="请确认是否为该商品？"
+                android:textColor="@color/color_1C212A"
+                android:textSize="@dimen/dp_16"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="24dp"
+                android:paddingHorizontal="@dimen/dp_24"
+                android:layout_gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+
+                    android:text="您查真伪的是"
+                    android:textColor="@color/color_333333"
+                    android:textSize="@dimen/dp_14" />
+
+                <TextView
+                    android:id="@+id/tv_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_3"
+                    android:gravity="center_vertical"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_0FC8AC"
+                    android:textSize="@dimen/dp_17"
+                    tools:text="哈哈哈哈" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_48"
+                android:layout_marginHorizontal="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_15"
+                android:orientation="horizontal">
+
+                <com.noober.background.view.BLTextView
+                    android:id="@+id/tv_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{()->click.takePhone()}"
+                    android:paddingVertical="@dimen/dp_12"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:text="否，拍照查验"
+
+                    android:textColor="@color/color_90929E"
+                    android:textSize="@dimen/dp_16"
+                    app:bl_corners_radius="@dimen/dp_40"
+                    app:bl_solid_color="@color/color_F8F8F8" />
+
+
+                <com.noober.background.view.BLTextView
+                    android:id="@+id/tv_confirm"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:onClick="@{()->click.yes()}"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:text="是"
+                    android:textColor="@color/white"
+                    android:textSize="16dp"
+                    app:bl_corners_radius="@dimen/dp_30"
+                    app:bl_solid_color="@color/color_0FC8AC" />
+            </LinearLayout>
+        </com.noober.background.view.BLLinearLayout>
+        <ImageView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:onClick="@{()->click.close()}"
+            android:layout_gravity="right"
+            android:padding="@dimen/dp_15"/>
+    </FrameLayout>
+
+
+</layout>

@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "sass": "^1.57.1",
+    "sass-loader": "^13.2.0"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1"
+  }
+}

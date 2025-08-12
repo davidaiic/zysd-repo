@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.manle.phone.android.yaodian.fragment.CommentAndNewsFragment.ProxyClick" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/MyToolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:actionBarSize"
+                android:background="@color/color_0FC8AC"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                tools:layout_height="@dimen/dp_54">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.noober.background.view.BLLinearLayout
+                        android:id="@+id/searcLl"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/dp_32"
+                        android:layout_marginLeft="@dimen/dp_15"
+                        android:onClick="@{()->click.toSearch()}"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        app:bl_corners_radius="@dimen/dp_20"
+                        app:bl_solid_color="@color/white">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_13"
+                            android:src="@drawable/ic_search" />
+
+
+                        <TextView
+                            android:layout_width="@dimen/dp_0"
+                            android:layout_height="@dimen/dp_32"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:layout_weight="1"
+                            android:ellipsize="end"
+                            android:gravity="center_vertical"
+                            android:maxLines="1"
+                            android:text="输入关键词，快速找圈找内容"
+                            android:textColor="@color/color_999999"
+                            android:textSize="@dimen/dp_14" />
+
+
+                    </com.noober.background.view.BLLinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginLeft="@dimen/dp_26"
+                        android:layout_marginRight="@dimen/dp_16"
+                        android:drawableRight="@drawable/ic_down"
+                        android:drawablePadding="@dimen/dp_3"
+                        android:gravity="center"
+                        android:onClick="@{()->click.sieving()}"
+                        android:text="筛选"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/dp_14" />
+                </LinearLayout>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+            <net.lucode.hackware.magicindicator.MagicIndicator
+                android:id="@+id/magicIndicator"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_32"
+                android:layout_marginTop="@dimen/dp_10"
+                android:paddingLeft="@dimen/dp_15" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <com.noober.background.view.BLLinearLayout
+
+            android:layout_width="@dimen/dp_48"
+            android:layout_height="@dimen/dp_48"
+            android:layout_gravity="bottom|right"
+            android:onClick="@{()->click.publishPost()}"
+            android:layout_marginRight="@dimen/dp_15"
+            android:layout_marginBottom="@dimen/dp_93"
+            android:background="@color/color_0FC8AC"
+            android:orientation="vertical"
+            app:bl_corners_radius="@dimen/dp_40"
+            app:bl_gradient_endColor="#0FC7AB"
+            app:bl_gradient_startColor="#0AD0B2">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_7"
+                android:src="@drawable/ic_ft" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/dp_2"
+                android:text="发帖"
+                android:textColor="@color/white"
+                android:textSize="@dimen/dp_12" />
+
+        </com.noober.background.view.BLLinearLayout>
+    </FrameLayout>
+
+</layout>

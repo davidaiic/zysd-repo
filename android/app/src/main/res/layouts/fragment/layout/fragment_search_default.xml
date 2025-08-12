@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="com.manle.phone.android.yaodian.vm.SearchViewModel" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="click"
+            type="com.manle.phone.android.yaodian.fragment.SearchDefaultFragment.ProxyClick" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!--历史搜索-->
+        <LinearLayout
+            android:id="@+id/historyLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:orientation="vertical"
+            android:visibility="@{vm.historyList.size()>0?View.VISIBLE:View.GONE}">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginRight="@dimen/dp_16">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="历史搜索"
+                    android:textColor="@color/color_1C212A"
+                    android:textSize="@dimen/dp_18"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:onClick="@{()->click.deleteHistory()}"
+                    android:src="@drawable/ic_delete_history" />
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/historyFlexBoxRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_16"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_maxHeight="@dimen/dp_80" />
+        </LinearLayout>
+        <!--热门搜索-->
+        <LinearLayout
+            android:id="@+id/hotLl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dp_16"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical"
+            android:visibility="@{vm.hotList.size()>0?View.VISIBLE:View.GONE}">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="热门搜索"
+                android:textColor="@color/color_1C212A"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/hotFlexBoxRv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                app:flexWrap="wrap"
+                app:layout_maxHeight="@dimen/dp_80" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</layout>

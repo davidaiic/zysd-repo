@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="click"
+            type="com.manle.phone.android.yaodian.activity.CancelAccountActivity.ProxyClick" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/topBar"
+            layout="@layout/include_toolbar" />
+
+        <com.noober.background.view.BLTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_15"
+            android:layout_marginTop="@dimen/dp_10"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:text="您即将开始账号注销流程"
+            android:textColor="@color/color_FC511E"
+            android:textSize="@dimen/dp_16"
+            android:textStyle="bold"
+            app:bl_corners_radius="2dp"
+            app:bl_solid_color="#1Afc511e"
+            app:bl_stroke_color="@color/color_FC511E"
+            app:bl_stroke_width="1dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingVertical="@dimen/dp_20"
+            android:text="用户须知"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dp_14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:lineSpacingExtra="@dimen/dp_7"
+            android:paddingHorizontal="@dimen/dp_15"
+            android:paddingVertical="@dimen/dp_20"
+            android:text="绑本账户的个人资料和历史信息(包括但不限于用户名、头像、浏览记录等)都将无法找回。
+您历史已获得的权益、等视为您自行放弃，将无法继续使用。您理解并同意，注销后，我们无法帮助您重新恢复。
+注销本账户并不代表本账户注销前的账户行为和相关责任得到豁免或减轻。
+成功注销后所有的账号信息将会被删除且无法找回，使用原登录信息将会自动创建一个新账号，请谨慎操作。
+如您已仔细阅读上述【注销须知】后，仍执意注销您的账户，请提交注销申请，我们将在7日内处理你的注销申请，期间若重新登录，该申请将会被撤销。"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dp_14" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginHorizontal="@dimen/dp_22"
+                android:layout_marginBottom="@dimen/dp_30"
+                android:orientation="horizontal">
+
+                <com.noober.background.view.BLTextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="申请注销"
+                    android:onClick="@{()->click.cancelAccount()}"
+                    android:textColor="@color/color_0FC8AC"
+                    android:textSize="@dimen/dp_14"
+                    app:bl_corners_radius="@dimen/dp_40"
+                    app:bl_stroke_color="@color/color_0FC8AC"
+                    app:bl_stroke_width="1dp" />
+
+                <com.noober.background.view.BLTextView
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="再想想"
+                    android:onClick="@{()->click.think()}"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/dp_14"
+                    android:textStyle="bold"
+                    app:bl_corners_radius="@dimen/dp_40"
+                    app:bl_solid_color="@color/color_0FC8AC" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+</layout>

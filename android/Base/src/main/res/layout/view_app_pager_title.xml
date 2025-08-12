@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/bottomV"
+        android:layout_width="0dp"
+        android:layout_height="3dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="@dimen/dp_2"
+        android:background="@drawable/tab_bottom_bg"
+        app:layout_constraintLeft_toLeftOf="@+id/titleTv"
+        app:layout_constraintBottom_toBottomOf="@+id/titleTv"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <TextView
+        android:id="@+id/titleTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:includeFontPadding="false"
+        android:text="热门药品"
+        android:textColor="@color/color_333333"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:textSize="@dimen/dp_16"
+        android:textStyle="bold" />
+</androidx.constraintlayout.widget.ConstraintLayout>

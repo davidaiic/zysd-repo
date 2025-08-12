@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.manle.phone.android.yaodian.bean.ContentBean" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:bl_corners_radius="8dp"
+        app:bl_solid_color="@color/white">
+
+        <TextView
+            android:id="@+id/titleTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_20"
+            android:gravity="center"
+            android:text="隐私保护说明"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dp_18"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:paddingHorizontal="@dimen/dp_25"
+            android:text="欢迎您使用掌上药店！"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dp_14"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="@dimen/dp_25"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10"
+            app:layout_constraintBottom_toTopOf="@+id/tv"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleTv">
+
+            <TextView
+                android:id="@+id/webTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/color_666666"
+                android:textSize="@dimen/dp_14" />
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dp_25"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/dp_14" />
+
+        <com.noober.background.view.BLTextView
+            android:id="@+id/yesTv"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_40"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:gravity="center"
+            android:text="同意并继续"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dp_16"
+            app:bl_corners_radius="@dimen/dp_30"
+            app:bl_solid_color="@color/color_0FC8AC" />
+
+        <com.noober.background.view.BLTextView
+            android:id="@+id/noTv"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_40"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/dp_15"
+            android:gravity="center"
+            android:text="不同意"
+            android:textColor="@color/color_666666"
+            android:textSize="@dimen/dp_16"
+            app:bl_corners_radius="@dimen/dp_30"
+            app:bl_solid_color="@color/color_F2F3F5" />
+
+
+    </LinearLayout>
+</layout>

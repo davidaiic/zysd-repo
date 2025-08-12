@@ -1,0 +1,51 @@
+﻿# --- 閫氱敤 ---
+.DS_Store
+Thumbs.db
+*.log
+logs/
+tmp/
+.env
+.env.*.local
+
+# --- Node / Vue / uni-app ---
+node_modules/
+dist/
+dist-ssr/
+build/
+coverage/
+.hbuilderx/
+unpackage/
+*/unpackage/
+*/dist*/
+*/build*/
+
+# --- 鑵捐浜戜簯鍑芥暟锛堝鏈夛級 ---
+cloudfunctions/**/node_modules/
+cloudfunctions/**/.env*
+
+# --- Android ---
+**/.gradle/
+**/build/
+**/.cxx/
+**/*.iml
+local.properties
+.idea/
+*.apk
+*.aab
+
+# --- iOS ---
+**/DerivedData/
+**/*.xcuserstate
+**/*.xcscmblueprint
+**/*.xccheckout
+**/*.xcworkspace/xcuserdata/
+**/*.xcodeproj/xcuserdata/
+**/*.xcodeproj/project.xcworkspace/xcuserdata/
+Pods/
+
+# --- PHP / Composer ---
+vendor/
+# 搴旂敤椤圭洰寤鸿鎻愪氦 composer.lock锛堟湭蹇界暐锛?
+
+# --- 鍏朵粬 ---
+.vscode/

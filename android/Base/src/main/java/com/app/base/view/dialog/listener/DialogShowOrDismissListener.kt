@@ -1,0 +1,66 @@
+package com.app.base.view.dialog.listener
+
+import android.os.Parcel
+import android.os.Parcelable
+
+class DialogShowOrDismissListener : Parcelable {
+
+
+    var enableExecuteShowListener = true
+
+
+    var enableExecuteDismissListener = true
+
+    private var dialogShowFun: (() -> Unit)? = null
+
+    private var dialogDismissFun: (() -> Unit)? = null
+
+    fun onDialogShow(listener: () -> Unit) {
+        dialogShowFun = listener
+    }
+
+    fun onDialogDismiss(listener: () -> Unit) {
+        dialogDismissFun = listener
+    }
+
+    fun onAddDialogShow(listener: () -> Unit) {
+        val oldListener = dialogShowFun
+        dialogShowFun = {
+            oldListener?.invoke()
+            listener.invoke()
+        }
+    }
+
+    fun onAddDialogDismiss(listener: () -> Unit) {
+        val oldListener = dialogDismissFun
+        dialogDismissFun = {
+            oldListener?.invoke()
+            listener.invoke()
+        }
+    }
+
+    fun onDialogShow() {
+        dialogShowFun?.invoke()
+    }
+
+    fun onDialogDismiss() {
+        dialogDismissFun?.invoke()
+    }
+
+    constructor()
+
+    constructor(source: Parcel) : this(
+    )
+
+    override fun describeContents() = 0
+
+    override fun writeToParcel(dest: Parcel, flags: Int) = with(dest) {}
+
+    companion object {
+        @JvmField
+        val CREATOR: Parcelable.Creator<DialogShowOrDismissListener> = object : Parcelable.Creator<DialogShowOrDismissListener> {
+            override fun createFromParcel(source: Parcel): DialogShowOrDismissListener = DialogShowOrDismissListener(source)
+            override fun newArray(size: Int): Array<DialogShowOrDismissListener?> = arrayOfNulls(size)
+        }
+    }
+}

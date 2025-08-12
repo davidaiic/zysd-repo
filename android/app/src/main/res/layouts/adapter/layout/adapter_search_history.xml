@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="String" />
+    </data>
+
+    <com.noober.background.view.BLTextView
+        android:id="@+id/item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/dp_15"
+        android:paddingVertical="@dimen/dp_5"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:bl_solid_color="@color/color_F6F7F8"
+        app:bl_corners_radius="@dimen/dp_20"
+        android:ellipsize="end"
+        android:includeFontPadding="false"
+        android:paddingLeft="12dp"
+        android:paddingTop="8dp"
+        android:paddingRight="12dp"
+        android:paddingBottom="8dp"
+        android:singleLine="true"
+        android:text="@{model}"
+        tools:text="卡马替尼"
+        android:textColor="@color/color_666666"
+        android:textSize="13dp" />
+</layout>
