@@ -51,3 +51,11 @@ vendor/
 .vscode/
 
 ios/yaodian/Config/Config.xcconfig
+# --- prod artifacts / user uploads ---
+php-backend/frontend/web/uploads/
+php-backend/frontend/web/qrImages/
+php-backend/frontend/web/debug.txt
+
+# web server specific (Nginx uses try_files, Apache files not needed)
+php-backend/backend/web/.htaccess
+php-backend/frontend/web/.htaccess
